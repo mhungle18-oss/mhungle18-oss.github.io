@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <title>Bài 5.8 - Scrollspy</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <style>
+            .scrollspy-example {
+                height: 300px;
+                overflow-y: scroll;
+                position: relative;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <!-- Navbar cố định cho bài 5.8c -->
+            <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-3">
+                <a class="navbar-brand" href="#">Demon Slayer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="#section-home">Trang Chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section-product">Sản Phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section-contact">Liên Hệ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container my-5 pt-5">
+            <h2 class="mb-4">Bài 5.8: Tạo Scrollspy theo mẫu</h2>
+
+            <!-- a) Scrollspy đơn giản 3 phần -->
+            <section class="mb-5 border p-3 rounded">
+                <h4>a) Scrollspy đơn giản (Phần 1, Phần 2, Phần 3)</h4>
+                <nav id="navbar-a" class="navbar bg-body-tertiary px-3 mb-3">
+                    <a class="navbar-brand" href="#">Tổng quan</a>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="#phan1">Phần 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#phan2">Phần 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#phan3">Phần 3</a></li>
+                    </ul>
+                </nav>
+                <div data-bs-spy="scroll" data-bs-target="#navbar-a" data-bs-smooth-scroll="true" class="scrollspy-example p-3 bg-light rounded-2" tabindex="0">
+                    <div id="phan1">
+                        <h5>Phần 1: Tổng quan về Bootstrap</h5>
+                        <p>Bootstrap là một framework giao diện mã nguồn mở được sử dụng rộng rãi. Phiên bản mới nhất giúp tối ưu hóa giao diện và trải nghiệm người dùng.</p>
+                    </div>
+                    <div id="phan2" class="mt-4">
+                        <h5>Phần 2: Các thành phần phổ biến trong Bootstrap</h5>
+                        <ul>
+                            <li>Navbar: Thanh điều hướng đơn giản và dễ dùng.</li>
+                            <li>Buttons: Nhiều kiểu nút với màu sắc và kích thước khác nhau.</li>
+                            <li>Cards: Hiển thị nội dung dạng hộp đẹp mắt.</li>
+                            <li>Carousel: Trình chiếu ảnh đẹp, có điều khiển.</li>
+                        </ul>
+                    </div>
+                    <div id="phan3" class="mt-4">
+                        <h5>Phần 3: Lợi ích và Ứng dụng của Bootstrap</h5>
+                        <p>Tối ưu hóa thời gian phát triển giao diện web, tích hợp sẵn các lớp Responsive tương thích tốt trên nhiều loại màn hình khác nhau.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- b) Menu cố định bên trái, nội dung bên phải -->
+            <section class="mb-5 border p-3 rounded">
+                <h4>b) Scrollspy thanh điều hướng bên trái và nội dung bên phải</h4>
+                <div class="row">
+                    <div class="col-4">
+                        <div id="list-example" class="list-group">
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">Section One</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">Section Two</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">Section Three</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-4">Section Four</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-5">Section Five</a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example p-3 bg-light rounded-2" tabindex="0">
+                            <h4 id="list-item-1">Section One</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
+                            <h4 id="list-item-2">Section Two</h4>
+                            <p>Nullam hendrerit justo non leo aliquet imperdiet. Etiam in sagittis lectus. Suspendisse ultrices placerat accumsan. Mauris quis dapibus orci.</p>
+                            <h4 id="list-item-3">Section Three</h4>
+                            <p>Phasellus auctor velit at lacus blandit, commodo iaculis justo viverra. Etiam vitae est arcu. Mauris vel congue dolor.</p>
+                            <h4 id="list-item-4">Section Four</h4>
+                            <p>Aliquam eget mi mi. Fusce quam tortor, commodo ac dui quis, bibendum viverra erat. Maecenas mattis lectus enim.</p>
+                            <h4 id="list-item-5">Section Five</h4>
+                            <p>Curabitur et diam tristique, accumsan nunc eu, hendrerit tellus. Fusce lacinia arcu at eros feugiat.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- c) Trang Liên hệ sử dụng Scrollspy toàn trang -->
+            <section id="section-home" class="py-5">
+                <h3>Trang Chủ</h3>
+                <p>Nội dung trang chủ Demon Slayer Store...</p>
+            </section>
+
+            <section id="section-product" class="py-5">
+                <h3>Sản Phẩm</h3>
+                <p>Danh sách sản phẩm nổi bật...</p>
+            </section>
+
+            <section id="section-contact" class="py-5 bg-light p-4 rounded">
+                <h3 class="mb-4">Thông Tin Liên Hệ</h3>
+                <div class="row text-center mb-4">
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-white">
+                            <i class="fa-solid fa-location-dot fs-2 mb-2 text-primary"></i>
+                            <h5>Địa Chỉ</h5>
+                            <p class="mb-0">Nguyễn Thái Học, Phú Thọ, Việt Nam</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-white">
+                            <i class="fa-solid fa-phone fs-2 mb-2 text-primary"></i>
+                            <h5>Điện Thoại</h5>
+                            <p class="mb-0">+84 123 456 789<br>+84 987 654 321</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded bg-white">
+                            <i class="fa-solid fa-envelope fs-2 mb-2 text-primary"></i>
+                            <h5>Email</h5>
+                            <p class="mb-0">ngocmai20803@gmail.com<br>support@demonslayer.vn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Gửi Tin Nhắn</h4>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Họ và tên">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email liên hệ">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="3" placeholder="Nội dung tin nhắn"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi đi</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <!-- place footer here -->
+        </footer>
+
+        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            // Kích hoạt scrollspy cho toàn body
+            const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+                target: '#navbar-example'
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <title>Bài 5.7 - Modal</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS v5.3.8 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main class="container my-5">
+            <h2 class="mb-4">Bài 5.7: Tạo Modal theo mẫu</h2>
+
+            <!-- Các nút kích hoạt Modal có kích thước khác nhau -->
+            <div class="d-flex gap-2 mb-4">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSmall">
+                    Mở Modal nhỏ (modal-sm)
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLarge">
+                    Mở Modal lớn (modal-lg)
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalExtraLarge">
+                    Mở Modal rất lớn (modal-xl)
+                </button>
+            </div>
+
+            <!-- Modal Nhỏ (modal-sm) -->
+            <div class="modal fade" id="modalSmall" tabindex="-1" aria-labelledby="modalSmallLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalSmallLabel">Modal Heading</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Modal body..
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Lớn (modal-lg) -->
+            <div class="modal fade" id="modalLarge" tabindex="-1" aria-labelledby="modalLargeLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalLargeLabel">Modal Heading (Large)</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Đây là nội dung của Modal kích thước lớn (modal-lg).
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Rất Lớn (modal-xl) -->
+            <div class="modal fade" id="modalExtraLarge" tabindex="-1" aria-labelledby="modalXlLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modalXlLabel">Modal Heading (Extra Large)</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Đây là nội dung của Modal kích thước siêu lớn (modal-xl).
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
